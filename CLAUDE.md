@@ -35,6 +35,28 @@ docs/
     └── history/       # 日別作業ログ
 ```
 
+## ブランチ戦略（GitHub Flow）
+
+### ブランチ構成
+- `main` - 本番環境用、常にデプロイ可能な状態を維持
+- `feature/*` - 新機能開発（例: `feature/add-google-map`）
+- `fix/*` - バグ修正（例: `fix/header-responsive`）
+- `chore/*` - 設定変更・リファクタ（例: `chore/update-ci`）
+
+### 作業フロー
+1. **ブランチ作成**: `git checkout -b feature/機能名`
+2. **作業・コミット**: 細かく意味のある単位でコミット
+3. **プッシュ**: `git push -u origin feature/機能名`
+4. **PR作成**: GitHub上でPRを作成
+5. **CIパス確認**: 全てのチェックが通ることを確認
+6. **マージ**: Squash and merge を推奨
+7. **ブランチ削除**: マージ後にリモート・ローカルのブランチを削除
+
+### ルール
+- mainへの直接プッシュ禁止（ブランチプロテクション設定済み）
+- PRマージにはCI（test, system-test, lint）のパスが必須
+- 1つのPRは1つの機能/修正に集中させる
+
 ## CI/テストルール
 
 - **コミット前**: `bundle exec rspec` でテストがパスすることを確認
