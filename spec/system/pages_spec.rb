@@ -92,9 +92,12 @@ RSpec.describe "Pages", type: :system do
       expect(page).to have_content("ご質問・ご相談など、お気軽にお問い合わせください")
     end
 
-    it "displays google form placeholder" do
+    it "displays contact form" do
       visit contact_path
-      expect(page).to have_content("Googleフォーム埋め込みエリア")
+      expect(page).to have_field("お名前")
+      expect(page).to have_field("メールアドレス")
+      expect(page).to have_field("お問い合わせ内容")
+      expect(page).to have_button("送信する")
     end
 
     it "displays phone and email" do
