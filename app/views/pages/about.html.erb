@@ -1,0 +1,121 @@
+<% content_for(:title) { "About | Harayan" } %>
+
+<%# ページヘッダー %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-light tracking-wide text-gray-900 mb-4">
+      About
+    </h1>
+    <p class="text-gray-600">
+      会社概要
+    </p>
+  </div>
+</section>
+
+<%# 理念セクション %>
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-8">
+        Philosophy
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        私たちは「お客様に最高の体験を」という理念のもと、<br class="hidden md:inline">
+        日々サービスの向上に努めています。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <%# Mission %>
+      <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 flex items-center justify-center">
+          <span class="text-primary-600 text-2xl font-light">M</span>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Mission</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          お客様の期待を超える<br>体験を提供する
+        </p>
+      </div>
+
+      <%# Vision %>
+      <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 flex items-center justify-center">
+          <span class="text-primary-600 text-2xl font-light">V</span>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Vision</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          地域で最も愛される<br>サービスを目指す
+        </p>
+      </div>
+
+      <%# Value %>
+      <div class="p-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-100 flex items-center justify-center">
+          <span class="text-primary-600 text-2xl font-light">V</span>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Value</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          誠実・挑戦・感謝の<br>心を大切にする
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 会社概要セクション %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-12 text-center">
+      Company
+    </h2>
+
+    <div class="bg-white p-8 md:p-12">
+      <table class="w-full">
+        <tbody>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium w-1/3 align-top">会社名</th>
+            <td class="py-4 text-gray-900">株式会社Harayan</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium align-top">設立</th>
+            <td class="py-4 text-gray-900">2024年1月</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium align-top">代表者</th>
+            <td class="py-4 text-gray-900">代表取締役 山田 太郎</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium align-top">所在地</th>
+            <td class="py-4 text-gray-900">
+              〒000-0000<br>
+              東京都○○区○○ 1-2-3
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium align-top">電話番号</th>
+            <td class="py-4 text-gray-900">03-0000-0000</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <th class="py-4 pr-4 text-left text-gray-500 font-medium align-top">事業内容</th>
+            <td class="py-4 text-gray-900">
+              ・サービス事業<br>
+              ・その他関連事業
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<%# CTAセクション %>
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-gray-600 mb-6">
+      ご不明な点がございましたら、お気軽にお問い合わせください
+    </p>
+    <%= link_to "お問い合わせ", contact_path,
+        class: "inline-block px-8 py-4 bg-primary-500 text-white font-medium
+               hover:bg-primary-600 transition-colors" %>
+  </div>
+</section>
