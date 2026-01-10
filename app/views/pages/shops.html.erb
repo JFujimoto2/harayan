@@ -1,0 +1,104 @@
+<% content_for(:title) { "Shops | Harayan" } %>
+
+<%# ページヘッダー %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-5xl font-light tracking-wide text-gray-900 mb-4">
+      Shops
+    </h1>
+    <p class="text-gray-600">
+      店舗情報
+    </p>
+  </div>
+</section>
+
+<%# 店舗一覧セクション %>
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <%# 現在は1店舗のみ %>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <%# 店舗画像 %>
+      <div class="aspect-[4/3] bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+        <span class="text-white text-4xl font-light">Shop Image</span>
+      </div>
+
+      <%# 店舗情報 %>
+      <div>
+        <h2 class="text-2xl md:text-3xl font-medium text-gray-900 mb-6">
+          Harayan 本店
+        </h2>
+
+        <div class="space-y-4 mb-8">
+          <div class="flex">
+            <span class="w-24 text-gray-500 text-sm shrink-0">住所</span>
+            <span class="text-gray-900">
+              〒000-0000<br>
+              東京都○○区○○ 1-2-3
+            </span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 text-sm shrink-0">電話</span>
+            <span class="text-gray-900">03-0000-0000</span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 text-sm shrink-0">営業時間</span>
+            <span class="text-gray-900">10:00 - 20:00</span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 text-sm shrink-0">定休日</span>
+            <span class="text-gray-900">水曜日</span>
+          </div>
+        </div>
+
+        <%# アクセス %>
+        <div class="mb-8">
+          <h3 class="text-lg font-medium text-gray-900 mb-3">アクセス</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            ○○駅から徒歩5分<br>
+            △△バス停から徒歩2分
+          </p>
+        </div>
+
+        <%= link_to contact_path, class: "inline-block px-6 py-3 bg-primary-500 text-white font-medium hover:bg-primary-600 transition-colors" do %>
+          お問い合わせ
+        <% end %>
+      </div>
+    </div>
+
+    <%#
+      複数店舗対応用のコメントアウト
+      将来的に店舗が増えた場合は以下のようにループで表示
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <%# @shops.each do |shop| %>
+          <div class="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="aspect-[4/3] bg-gray-200">
+              <%#= image_tag shop.image, class: "w-full h-full object-cover" %>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-medium text-gray-900 mb-2"><%#= shop.name %></h3>
+              <p class="text-gray-500 text-sm mb-2"><%#= shop.address %></p>
+              <p class="text-gray-500 text-sm"><%#= shop.hours %></p>
+            </div>
+          </div>
+        <%# end %>
+      </div>
+    %>
+  </div>
+</section>
+
+<%# 地図セクション（オプション） %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-light tracking-wide text-gray-900 mb-8 text-center">
+      Map
+    </h2>
+    <%# Googleマップ埋め込み用のプレースホルダー %>
+    <div class="aspect-[16/9] bg-gray-200 flex items-center justify-center">
+      <p class="text-gray-500">
+        Google Maps埋め込みエリア<br>
+        <span class="text-sm">（実装時にiframeを追加）</span>
+      </p>
+    </div>
+  </div>
+</section>

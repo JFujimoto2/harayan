@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Custom Theme - Harayan */
+@theme {
+  /* Colors - Primary (Deep Green) */
+  --color-primary-50: #f0f5f1;
+  --color-primary-100: #dce8de;
+  --color-primary-200: #b8d1bd;
+  --color-primary-300: #8fb698;
+  --color-primary-400: #6a9b75;
+  --color-primary-500: #3b5442;
+  --color-primary-600: #2d4033;
+  --color-primary-700: #243329;
+  --color-primary-800: #1a261e;
+  --color-primary-900: #111a14;
+
+  /* Colors - Accent (Warm Brown) */
+  --color-accent-50: #f9f6f4;
+  --color-accent-100: #f0ebe6;
+  --color-accent-200: #e0d5cc;
+  --color-accent-300: #c9b8a8;
+  --color-accent-400: #a68b73;
+  --color-accent-500: #745d4a;
+  --color-accent-600: #5c4a3b;
+  --color-accent-700: #473930;
+  --color-accent-800: #332a23;
+  --color-accent-900: #221c18;
+
+  /* Fonts */
+  --font-sans: 'Work Sans', 'Noto Sans JP', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+}
