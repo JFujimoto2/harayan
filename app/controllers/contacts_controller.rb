@@ -77,15 +77,10 @@ class ContactsController < ApplicationController
     require "googleauth"
 
     spreadsheet_id = ENV["GOOGLE_SHEETS_SPREADSHEET_ID"]
-    credentials_path = ENV["GOOGLE_SHEETS_CREDENTIALS"]
-
-    return if spreadsheet_id.blank? || credentials_path.blank?
+    return if spreadsheet_id.blank?
 
     service = Google::Apis::SheetsV4::SheetsService.new
-    service.authorization = Google::Auth::ServiceAccountCredentials.make_creds(
-      json_key_io: File.open(credentials_path),
-      scope: Google::Apis::SheetsV4::AUTH_SPREADSHEETS
-    )
+    service.authorization = google_sheets_credentials
 
     # 電話番号の先頭0が消えないよう、シングルクォートを付けてテキストとして送信
     phone_value = contact_params[:phone].present? ? "'#{contact_params[:phone]}" : ""
@@ -127,5 +122,26 @@ class ContactsController < ApplicationController
 
     uri = URI(webhook_url)
     Net::HTTP.post(uri, message.to_json, "Content-Type" => "application/json")
+  end
+
+  def google_sheets_credentials
+    require "stringio"
+
+    # 本番環境: Base64エンコードされたJSONを環境変数から読み込み
+    if ENV["GOOGLE_SHEETS_CREDENTIALS_JSON"].present?
+      json_key = Base64.decode64(ENV["GOOGLE_SHEETS_CREDENTIALS_JSON"])
+      Google::Auth::ServiceAccountCredentials.make_creds(
+        json_key_io: StringIO.new(json_key),
+        scope: Google::Apis::SheetsV4::AUTH_SPREADSHEETS
+      )
+    # 開発環境: ファイルから読み込み
+    elsif ENV["GOOGLE_SHEETS_CREDENTIALS"].present?
+      Google::Auth::ServiceAccountCredentials.make_creds(
+        json_key_io: File.open(ENV["GOOGLE_SHEETS_CREDENTIALS"]),
+        scope: Google::Apis::SheetsV4::AUTH_SPREADSHEETS
+      )
+    else
+      raise "Google Sheets credentials not configured"
+    end
   end
 end
