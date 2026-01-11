@@ -1,14 +1,17 @@
 # コンタクトフォーム改修計画
 
+## 実装状況: ✅ 完了
+
 ## 現状
-- HTMLフォーム（プレースホルダー）が配置済み
-- フォーム送信機能は未実装
+- ~~HTMLフォーム（プレースホルダー）が配置済み~~
+- ~~フォーム送信機能は未実装~~
 - DBなし（`--skip-active-record`で構築）
+- **フォーム送信 → Google Sheets保存 + Slack通知 が動作中**
 
 ## 目標
-- DBを使わずにフォーム送信を実現
-- 問い合わせデータを蓄積
-- 新着問い合わせを即時通知
+- ✅ DBを使わずにフォーム送信を実現
+- ✅ 問い合わせデータを蓄積
+- ✅ 新着問い合わせを即時通知
 
 ## 構成案
 
@@ -68,28 +71,29 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxxxx/xxxxx/xxxxx
 
 ## 実装手順
 
-### Phase 1: 基盤準備
-- [ ] `google-apis-sheets_v4` gem追加
-- [ ] 環境変数の設定（dotenv-rails）
-- [ ] Googleサービスアカウント作成
-- [ ] スプレッドシート作成・共有設定
+### Phase 1: 基盤準備 ✅
+- [x] `google-apis-sheets_v4` gem追加
+- [x] 環境変数の設定（dotenv-rails）
+- [x] Googleサービスアカウント作成
+- [x] スプレッドシート作成・共有設定
 
-### Phase 2: コントローラー実装
-- [ ] `ContactsController#create` 作成
-- [ ] ルーティング追加（`POST /contact`）
-- [ ] Google Sheets書き込み処理
-- [ ] Slack通知処理
+### Phase 2: コントローラー実装 ✅
+- [x] `ContactsController#create` 作成
+- [x] ルーティング追加（`POST /contact`）
+- [x] Google Sheets書き込み処理
+- [x] Slack通知処理
 
-### Phase 3: ビュー更新
-- [ ] フォームのaction属性を更新
-- [ ] CSRFトークン追加
-- [ ] 送信完了メッセージ（flash）
-- [ ] バリデーションエラー表示
+### Phase 3: ビュー更新 ✅
+- [x] フォームのaction属性を更新
+- [x] CSRFトークン追加（form_with自動対応）
+- [x] 送信完了メッセージ（flash）
+- [x] バリデーションエラー表示
+- [x] 入力値保持（エラー時）
 
-### Phase 4: テスト
-- [ ] コントローラースペック追加
-- [ ] システムスペック更新
-- [ ] 外部API呼び出しのモック
+### Phase 4: テスト ✅
+- [x] コントローラースペック追加（12件）
+- [x] 外部API呼び出しのモック
+- [x] 全43件パス
 
 ## Google設定手順
 
@@ -150,11 +154,29 @@ SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxxxx/xxxxx/xxxxx
 - 入力値は保持される（再入力不要）
 - HTTPステータス: 422 Unprocessable Entity
 
-## セキュリティ考慮事項
-- [ ] CSRF対策（Rails標準）
-- [ ] レートリミット（Rack::Attack等）
-- [ ] 入力値のサニタイズ
-- [ ] 環境変数の管理（本番環境）
+## セキュリティ対策 ✅
+
+- [x] CSRF対策（Rails標準 - form_with自動対応）
+- [x] レートリミット（Rack::Attack）
+- [x] 入力値のサニタイズ（Rails標準）
+- [x] 環境変数の管理（.env + gitignore）
+
+### レートリミット設定
+```ruby
+# config/initializers/rack_attack.rb
+throttle("contact_form/ip", limit: 3, period: 1.minute) do |req|
+  if req.path == "/contact" && req.post?
+    req.ip
+  end
+end
+```
+
+| 設定 | 値 |
+|------|-----|
+| 対象 | `POST /contact` |
+| 制限 | 同一IPから1分間に3回まで |
+| 超過時 | 429 Too Many Requests |
+| テスト環境 | 無効化 |
 
 ## 代替案
 
