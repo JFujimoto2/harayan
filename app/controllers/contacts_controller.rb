@@ -87,11 +87,14 @@ class ContactsController < ApplicationController
       scope: Google::Apis::SheetsV4::AUTH_SPREADSHEETS
     )
 
+    # 電話番号の先頭0が消えないよう、シングルクォートを付けてテキストとして送信
+    phone_value = contact_params[:phone].present? ? "'#{contact_params[:phone]}" : ""
+
     row = [
       Time.current.strftime("%Y-%m-%d %H:%M:%S"),
       contact_params[:name],
       contact_params[:email],
-      contact_params[:phone],
+      phone_value,
       subject_label,
       contact_params[:message]
     ]
