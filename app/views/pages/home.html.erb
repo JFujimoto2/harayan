@@ -1,7 +1,7 @@
 <% content_for(:title) { "Harayan | トップページ" } %>
 
 <%# ヒーローセクション - グリッドレイアウト %>
-<section class="-mt-20 pt-20">
+<section class="-mt-20 pt-20 mb-8">
   <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
     <%# メイン画像（大きめ） %>
     <div class="md:col-span-2 lg:col-span-2 lg:row-span-2 relative group overflow-hidden">
@@ -20,52 +20,52 @@
     </div>
 
     <%# 右上画像1 %>
-    <div class="relative group overflow-hidden">
+    <div class="relative overflow-hidden">
       <div class="aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=450&fit=crop"
              alt="レストラン内装"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
       <div class="absolute bottom-4 left-4 text-white">
         <p class="text-sm font-light tracking-wide">Interior</p>
       </div>
     </div>
 
     <%# 右上画像2 %>
-    <div class="relative group overflow-hidden">
+    <div class="relative overflow-hidden">
       <div class="aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=450&fit=crop"
              alt="カクテル"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
       <div class="absolute bottom-4 left-4 text-white">
         <p class="text-sm font-light tracking-wide">Drinks</p>
       </div>
     </div>
 
     <%# 右下画像1 %>
-    <div class="relative group overflow-hidden hidden lg:block">
+    <div class="relative overflow-hidden hidden lg:block">
       <div class="aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=600&h=450&fit=crop"
              alt="バー雰囲気"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
       <div class="absolute bottom-4 left-4 text-white">
         <p class="text-sm font-light tracking-wide">Space</p>
       </div>
     </div>
 
     <%# 右下画像2 %>
-    <div class="relative group overflow-hidden hidden lg:block">
+    <div class="relative overflow-hidden hidden lg:block">
       <div class="aspect-[4/3]">
         <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&h=450&fit=crop"
              alt="ネオンバー"
-             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+             class="w-full h-full object-cover">
       </div>
-      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
       <div class="absolute bottom-4 left-4 text-white">
         <p class="text-sm font-light tracking-wide">Atmosphere</p>
       </div>
@@ -124,44 +124,44 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       <%# カード1 %>
-      <div class="group">
+      <div>
         <div class="aspect-square mb-4 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop"
                alt="ワイン"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+               class="w-full h-full object-cover">
         </div>
         <h3 class="text-sm font-medium text-gray-900 mb-1">Quality</h3>
         <p class="text-xs text-gray-500">品質へのこだわり</p>
       </div>
 
       <%# カード2 %>
-      <div class="group">
+      <div>
         <div class="aspect-square mb-4 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&h=400&fit=crop"
                alt="サービス"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+               class="w-full h-full object-cover">
         </div>
         <h3 class="text-sm font-medium text-gray-900 mb-1">Service</h3>
         <p class="text-xs text-gray-500">心を込めた接客</p>
       </div>
 
       <%# カード3 %>
-      <div class="group">
+      <div>
         <div class="aspect-square mb-4 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=400&h=400&fit=crop"
                alt="空間"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+               class="w-full h-full object-cover">
         </div>
         <h3 class="text-sm font-medium text-gray-900 mb-1">Space</h3>
         <p class="text-xs text-gray-500">居心地の良い空間</p>
       </div>
 
       <%# カード4 %>
-      <div class="group">
+      <div>
         <div class="aspect-square mb-4 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=400&h=400&fit=crop"
                alt="乾杯"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+               class="w-full h-full object-cover">
         </div>
         <h3 class="text-sm font-medium text-gray-900 mb-1">Trust</h3>
         <p class="text-xs text-gray-500">信頼と安心</p>
