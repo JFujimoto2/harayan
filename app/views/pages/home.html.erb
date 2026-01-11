@@ -1,108 +1,230 @@
 <% content_for(:title) { "Harayan | トップページ" } %>
 
-<%# ヒーローセクション %>
-<section class="relative h-screen min-h-[600px] flex items-center justify-center -mt-20">
-  <%# 背景画像（ダミー：グラデーション） %>
-  <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-500 to-primary-700"></div>
-  <div class="absolute inset-0 bg-black/30"></div>
+<%# ヒーローセクション - グリッドレイアウト %>
+<section class="-mt-20 pt-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
+    <%# メイン画像（大きめ） %>
+    <div class="md:col-span-2 lg:col-span-2 lg:row-span-2 relative group overflow-hidden">
+      <div class="aspect-[4/3] lg:aspect-auto lg:h-full">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200&h=800&fit=crop"
+             alt="バーカウンター"
+             class="w-full h-full object-cover">
+      </div>
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center text-white p-8">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-wider mb-4">Harayan</h1>
+          <p class="text-lg font-light opacity-90">お客様に最高の体験をお届けします</p>
+        </div>
+      </div>
+    </div>
 
-  <%# コンテンツ %>
-  <div class="relative z-10 text-center text-white px-4">
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-wider mb-6">
-      Harayan
-    </h1>
-    <p class="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto leading-relaxed">
-      お客様に最高の体験をお届けします
-    </p>
-    <%= link_to "詳しく見る", about_path,
-        class: "inline-block px-8 py-4 border border-white text-white
-               hover:bg-white hover:text-gray-900 transition-all duration-300" %>
+    <%# 右上画像1 %>
+    <div class="relative group overflow-hidden">
+      <div class="aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=450&fit=crop"
+             alt="レストラン内装"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute bottom-4 left-4 text-white">
+        <p class="text-sm font-light tracking-wide">Interior</p>
+      </div>
+    </div>
+
+    <%# 右上画像2 %>
+    <div class="relative group overflow-hidden">
+      <div class="aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=450&fit=crop"
+             alt="カクテル"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute bottom-4 left-4 text-white">
+        <p class="text-sm font-light tracking-wide">Drinks</p>
+      </div>
+    </div>
+
+    <%# 右下画像1 %>
+    <div class="relative group overflow-hidden hidden lg:block">
+      <div class="aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=600&h=450&fit=crop"
+             alt="バー雰囲気"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute bottom-4 left-4 text-white">
+        <p class="text-sm font-light tracking-wide">Space</p>
+      </div>
+    </div>
+
+    <%# 右下画像2 %>
+    <div class="relative group overflow-hidden hidden lg:block">
+      <div class="aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&h=450&fit=crop"
+             alt="ネオンバー"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300"></div>
+      <div class="absolute bottom-4 left-4 text-white">
+        <p class="text-sm font-light tracking-wide">Atmosphere</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <%# スクロールインジケーター %>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
+<%# フルワイド画像セクション %>
+<section class="relative h-[50vh] md:h-[60vh] overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1920&h=1080&fit=crop"
+       alt="バー店内"
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 h-full flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <p class="text-sm tracking-[0.3em] mb-4 opacity-80">WELCOME TO</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">Our Space</h2>
+    </div>
   </div>
 </section>
 
 <%# コンセプトセクション %>
-<section class="py-20 bg-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-light tracking-wide text-gray-900 mb-8">
-      Concept
-    </h2>
-    <p class="text-lg text-gray-600 leading-relaxed mb-6">
-      私たちは、日常に特別な時間を創り出すことを大切にしています。
-    </p>
-    <p class="text-gray-500 leading-relaxed">
-      心地よい空間と丁寧なサービスで、<br class="hidden md:inline">
-      お客様一人ひとりに寄り添った体験をお届けします。
-    </p>
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-light tracking-wide text-gray-900 mb-2">
+          Harayan
+        </h2>
+        <p class="text-sm text-gray-500 mb-6 tracking-wide">About Us</p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          「お客様に寄り添う」をコンセプトに、空間・デザイン・サービス・人を大切に、日々の中で感じる特別な時間を創り出しています。
+        </p>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          心地よい空間と丁寧なサービスで、お客様一人ひとりに寄り添った体験をお届けします。
+        </p>
+      </div>
+      <div class="aspect-[4/3] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=800&h=600&fit=crop"
+             alt="バーテンダー"
+             class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# Concept（サービス紹介）セクション %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-2">
+        Concept
+      </h2>
+      <p class="text-sm text-gray-500 tracking-wide">私たちが大切にしていること</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <%# カード1 %>
+      <div class="group">
+        <div class="aspect-square mb-4 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop"
+               alt="ワイン"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 mb-1">Quality</h3>
+        <p class="text-xs text-gray-500">品質へのこだわり</p>
+      </div>
+
+      <%# カード2 %>
+      <div class="group">
+        <div class="aspect-square mb-4 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=400&h=400&fit=crop"
+               alt="サービス"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 mb-1">Service</h3>
+        <p class="text-xs text-gray-500">心を込めた接客</p>
+      </div>
+
+      <%# カード3 %>
+      <div class="group">
+        <div class="aspect-square mb-4 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=400&h=400&fit=crop"
+               alt="空間"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 mb-1">Space</h3>
+        <p class="text-xs text-gray-500">居心地の良い空間</p>
+      </div>
+
+      <%# カード4 %>
+      <div class="group">
+        <div class="aspect-square mb-4 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1560624052-449f5ddf0c31?w=400&h=400&fit=crop"
+               alt="乾杯"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <h3 class="text-sm font-medium text-gray-900 mb-1">Trust</h3>
+        <p class="text-xs text-gray-500">信頼と安心</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <%# サービス紹介セクション %>
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-light tracking-wide text-gray-900 mb-4">
+      <h2 class="text-2xl md:text-3xl font-light tracking-wide text-gray-900 mb-2">
         Services
       </h2>
-      <p class="text-gray-600">
-        私たちが提供するサービス
-      </p>
+      <p class="text-sm text-gray-500 tracking-wide">私たちが提供するサービス</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <%# カード1: 店舗 %>
       <%= link_to shops_path, class: "group block" do %>
-        <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="aspect-[4/3] bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-            <span class="text-white text-6xl font-light">01</span>
+        <div class="relative overflow-hidden">
+          <div class="aspect-[3/2]">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=533&fit=crop"
+                 alt="店舗"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-              Shop
-            </h3>
-            <p class="text-gray-500 text-sm">
-              店舗情報をご覧いただけます
-            </p>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-xl font-medium mb-1">Shop</h3>
+            <p class="text-sm opacity-80">店舗情報</p>
           </div>
         </div>
       <% end %>
 
       <%# カード2: 採用 %>
       <%= link_to recruit_path, class: "group block" do %>
-        <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="aspect-[4/3] bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center">
-            <span class="text-white text-6xl font-light">02</span>
+        <div class="relative overflow-hidden">
+          <div class="aspect-[3/2]">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=533&fit=crop"
+                 alt="採用"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-              Recruit
-            </h3>
-            <p class="text-gray-500 text-sm">
-              一緒に働く仲間を募集しています
-            </p>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-xl font-medium mb-1">Recruit</h3>
+            <p class="text-sm opacity-80">採用情報</p>
           </div>
         </div>
       <% end %>
 
       <%# カード3: コンタクト %>
       <%= link_to contact_path, class: "group block" do %>
-        <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div class="aspect-[4/3] bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center">
-            <span class="text-white text-6xl font-light">03</span>
+        <div class="relative overflow-hidden">
+          <div class="aspect-[3/2]">
+            <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=800&h=533&fit=crop"
+                 alt="コンタクト"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-              Contact
-            </h3>
-            <p class="text-gray-500 text-sm">
-              お問い合わせはこちらから
-            </p>
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="text-xl font-medium mb-1">Contact</h3>
+            <p class="text-sm opacity-80">お問い合わせ</p>
           </div>
         </div>
       <% end %>
@@ -110,17 +232,22 @@
   </div>
 </section>
 
-<%# CTAセクション %>
-<section class="py-20 bg-primary-600">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-2xl md:text-3xl font-light text-white mb-6">
+<%# フルワイド背景セクション（CTAを兼ねる） %>
+<section class="relative py-32 md:py-40 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1920&h=1080&fit=crop"
+       alt="背景"
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-sm tracking-[0.3em] text-white/70 mb-4">CONTACT US</p>
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-6">
       お気軽にお問い合わせください
     </h2>
-    <p class="text-primary-100 mb-8">
+    <p class="text-white/70 mb-8 max-w-lg mx-auto">
       ご質問やご相談など、お待ちしております
     </p>
     <%= link_to "お問い合わせ", contact_path,
-        class: "inline-block px-8 py-4 bg-white text-primary-600 font-medium
-               hover:bg-gray-100 transition-colors" %>
+        class: "inline-block px-10 py-4 border border-white text-white
+               hover:bg-white hover:text-gray-900 transition-all duration-300 tracking-wide" %>
   </div>
 </section>
