@@ -64,26 +64,6 @@
         <% end %>
       </div>
     </div>
-
-    <%#
-      複数店舗対応用のコメントアウト
-      将来的に店舗が増えた場合は以下のようにループで表示
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <%# @shops.each do |shop| %>
-          <div class="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-            <div class="aspect-[4/3] bg-gray-200">
-              <%#= image_tag shop.image, class: "w-full h-full object-cover" %>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-medium text-gray-900 mb-2"><%#= shop.name %></h3>
-              <p class="text-gray-500 text-sm mb-2"><%#= shop.address %></p>
-              <p class="text-gray-500 text-sm"><%#= shop.hours %></p>
-            </div>
-          </div>
-        <%# end %>
-      </div>
-    %>
   </div>
 </section>
 
