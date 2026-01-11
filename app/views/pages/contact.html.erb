@@ -28,16 +28,19 @@
 <section class="py-12 bg-white">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-gray-50 p-4 md:p-8">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdxImtaSbXv3l9g8r5JwRhdpEOKlLuzZU4rOkitlHV1VFSuuA/viewform?embedded=true"
-        width="100%"
-        height="800"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        class="w-full min-h-[800px]">
-        読み込んでいます...
-      </iframe>
+      <%# タイトル部分を隠すためのラッパー %>
+      <div class="overflow-hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdxImtaSbXv3l9g8r5JwRhdpEOKlLuzZU4rOkitlHV1VFSuuA/viewform?embedded=true"
+          width="100%"
+          height="1100"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          class="w-full -mt-14">
+          読み込んでいます...
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
