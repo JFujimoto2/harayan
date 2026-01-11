@@ -99,7 +99,7 @@ class ContactsController < ApplicationController
       contact_params[:message]
     ]
 
-    value_range = Google::Apis::SheetsV4::ValueRange.new(values: [row])
+    value_range = Google::Apis::SheetsV4::ValueRange.new(values: [ row ])
 
     service.append_spreadsheet_value(
       spreadsheet_id,

@@ -33,7 +33,7 @@ namespace :google_sheets do
 
     # Append the row
     range = "A:F"
-    value_range = Google::Apis::SheetsV4::ValueRange.new(values: [test_row])
+    value_range = Google::Apis::SheetsV4::ValueRange.new(values: [ test_row ])
 
     begin
       service.append_spreadsheet_value(
