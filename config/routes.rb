@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get "shops", to: "pages#shops"
   get "recruit", to: "pages#recruit"
   get "contact", to: "pages#contact"
+
+  # Contact form submission
+  post "contact", to: "contacts#create"
 end

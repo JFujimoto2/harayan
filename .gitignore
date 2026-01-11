@@ -33,6 +33,9 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+# Google API credentials (contains private key)
+/config/google_credentials.json
+
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
