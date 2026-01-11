@@ -53,29 +53,65 @@ HarayanサイトをWebに公開するためのデプロイ設定
 
 Render Dashboard → Environment で以下を設定:
 
+#### 必須の環境変数一覧
+
+| 変数名 | 必須 | 説明 | 値の例 |
+|--------|------|------|--------|
+| `RAILS_ENV` | ✅ | Rails実行環境 | `production` |
+| `SECRET_KEY_BASE` | ✅ | Railsセッション暗号化キー | `bin/rails secret`で生成 |
+| `RAILS_SERVE_STATIC_FILES` | ✅ | 静的ファイル配信を有効化 | `true` |
+| `SLACK_WEBHOOK_URL` | ✅ | Slack通知用Webhook URL | `https://hooks.slack.com/services/...` |
+| `GOOGLE_SHEETS_SPREADSHEET_ID` | ✅ | Google SheetsのスプレッドシートID | URLの`/d/`と`/edit`の間の文字列 |
+| `GOOGLE_SHEETS_CREDENTIALS_JSON` | ✅ | サービスアカウント認証情報（Base64） | 下記コマンドで生成 |
+
+#### オプションの環境変数
+
+| 変数名 | 必須 | 説明 | 値の例 |
+|--------|------|------|--------|
+| `WEB_CONCURRENCY` | ❌ | Pumaワーカー数 | `1`（Free tierでは不要または1） |
+| `RAILS_MAX_THREADS` | ❌ | Pumaスレッド数 | `5`（デフォルト） |
+| `RAILS_LOG_TO_STDOUT` | ❌ | ログを標準出力に出力 | `true`（Renderでは自動設定） |
+
+#### 設定例（コピペ用）
+
 ```bash
-# Rails
+# === 必須 ===
 RAILS_ENV=production
-SECRET_KEY_BASE=<生成する>
+SECRET_KEY_BASE=<bin/rails secretで生成した値>
 RAILS_SERVE_STATIC_FILES=true
 
-# Slack
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxxxx
+# Slack通知
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXXXX/XXXXX/XXXXX
 
-# Google Sheets
-GOOGLE_SHEETS_SPREADSHEET_ID=xxxxx
-GOOGLE_SHEETS_CREDENTIALS_JSON=<JSON内容をBase64エンコード>
+# Google Sheets API
+GOOGLE_SHEETS_SPREADSHEET_ID=<スプレッドシートID>
+GOOGLE_SHEETS_CREDENTIALS_JSON=<Base64エンコードしたJSON>
+
+# === オプション（Free tierでは設定不要） ===
+# WEB_CONCURRENCY=1
 ```
 
 #### SECRET_KEY_BASEの生成
 ```bash
 bin/rails secret
 ```
+出力された64文字の文字列をそのまま設定。
 
 #### Google認証情報のBase64エンコード
 ```bash
+# Linux/Mac
 base64 -w 0 config/google_credentials.json
+
+# macOS（-wオプションがない場合）
+base64 -i config/google_credentials.json | tr -d '\n'
 ```
+出力された文字列をそのまま`GOOGLE_SHEETS_CREDENTIALS_JSON`に設定。
+
+#### WEB_CONCURRENCYについて
+- Pumaのワーカープロセス数を制御
+- Free tier（512MB RAM）では`1`または未設定で十分
+- 設定しない場合、PumaがCPUコア数に基づいて自動決定
+- メモリ不足エラーが出る場合は`1`に設定
 
 ### Phase 3: アプリケーション修正
 
@@ -183,10 +219,33 @@ fly deploy
 
 ## 注意事項
 
-### 無料枠の制限（Render）
-- 15分アクセスなしでスリープ
-- 月750時間まで（1インスタンスなら十分）
-- 初回アクセス時に起動で数秒〜30秒かかる
+### Render Free プランの特徴
+
+#### メリット
+- **無料** - クレジットカード登録不要
+- **自動デプロイ** - GitHubプッシュで自動ビルド・デプロイ
+- **SSL証明書** - 自動発行・更新
+- **カスタムドメイン** - 無料で設定可能
+
+#### 制限
+
+| 項目 | 内容 |
+|------|------|
+| スリープ | 15分間アクセスがないと休止状態になる |
+| 起動時間 | スリープ後の初回アクセスで30秒〜1分かかる |
+| RAM | 512MB |
+| CPU | 0.1 CPU |
+| 帯域 | 100GB/月 |
+| ビルド時間 | 500分/月 |
+
+#### スリープの影響
+- 初回アクセス時に「読み込み中...」のような待ち時間が発生
+- 頻繁にアクセスがあるサイトなら問題なし
+- 企業サイトとして常時高速応答が必要なら有料プラン（$7/月〜）を検討
+
+#### 対策（オプション）
+- UptimeRobot等の無料監視サービスで定期的にアクセスしてスリープを防ぐ
+- ただしRender側で検知されて制限される可能性あり
 
 ### 環境変数のセキュリティ
 - 本番環境ではダッシュボードから設定
