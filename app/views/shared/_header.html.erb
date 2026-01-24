@@ -9,7 +9,8 @@
       <%# Desktop Navigation %>
       <nav class="hidden md:flex items-center gap-8">
         <%= link_to "About", about_path, class: "nav-link" %>
-        <%= link_to "Shops", shops_path, class: "nav-link" %>
+        <%= link_to "Stores", stores_path, class: "nav-link" %>
+        <%= link_to "Business", business_path, class: "nav-link" %>
         <%= link_to "Recruit", recruit_path, class: "nav-link" %>
         <%= link_to "Contact", contact_path, class: "nav-link" %>
       </nav>
@@ -27,7 +28,8 @@
   <div class="md:hidden hidden" data-mobile-menu-target="menu">
     <nav class="px-6 py-4 space-y-2 bg-white border-t border-gray-100">
       <%= link_to "About", about_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
-      <%= link_to "Shops", shops_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
+      <%= link_to "Stores", stores_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
+      <%= link_to "Business", business_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
       <%= link_to "Recruit", recruit_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
       <%= link_to "Contact", contact_path, class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" %>
     </nav>

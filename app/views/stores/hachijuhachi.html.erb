@@ -1,0 +1,168 @@
+<% content_for(:title) { "八十八 | Harayan" } %>
+
+<%# ヒーローセクション %>
+<section class="relative h-[70vh] min-h-[500px] flex items-center">
+  <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1920&h=1080&fit=crop"
+       alt="八十八"
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+    <p class="text-sm tracking-wider mb-4 opacity-80">Japanese Tea Stand</p>
+    <h1 class="text-5xl md:text-6xl font-semibold tracking-tight mb-4">八十八</h1>
+    <p class="text-lg opacity-90">日本茶の新しいかたち</p>
+  </div>
+</section>
+
+<%# コンセプト %>
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Concept</p>
+    <h2 class="text-3xl font-semibold text-gray-900 mb-8">八十八夜に届く、新茶の光</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">
+      「八十八」は、日本茶の新しい楽しみ方を提案するティースタンドです。<br>
+      厳選された茶葉を、現代のライフスタイルに合わせたスタイルでお届けします。
+    </p>
+    <p class="text-gray-500 text-sm">
+      浅草・渋谷・鎌倉の3店舗で、それぞれの街に合わせた体験をご提供しています。
+    </p>
+  </div>
+</section>
+
+<%# ギャラリー %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm text-gray-500 mb-2">Gallery</p>
+      <h2 class="text-3xl font-semibold text-gray-900">空間と体験</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=400&h=400&fit=crop"
+             alt="日本茶" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=400&fit=crop"
+             alt="茶葉" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=400&h=400&fit=crop"
+             alt="店内" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400&h=400&fit=crop"
+             alt="お茶" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 店舗情報 %>
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm text-gray-500 mb-2">Locations</p>
+      <h2 class="text-3xl font-semibold text-gray-900">店舗情報</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <%# 浅草 %>
+      <div class="bg-gray-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">八十八 浅草</h3>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="text-gray-500 mb-1">住所</p>
+            <p class="text-gray-900">〒111-0032<br>東京都台東区浅草 X-X-X</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">営業時間</p>
+            <p class="text-gray-900">10:00 - 19:00</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">定休日</p>
+            <p class="text-gray-900">不定休</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-600 link-underline">
+            Google Map →
+          </a>
+        </div>
+      </div>
+
+      <%# 渋谷 %>
+      <div class="bg-gray-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">八十八 渋谷</h3>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="text-gray-500 mb-1">住所</p>
+            <p class="text-gray-900">〒150-0002<br>東京都渋谷区渋谷 X-X-X</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">営業時間</p>
+            <p class="text-gray-900">11:00 - 20:00</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">定休日</p>
+            <p class="text-gray-900">不定休</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-600 link-underline">
+            Google Map →
+          </a>
+        </div>
+      </div>
+
+      <%# 鎌倉 %>
+      <div class="bg-gray-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">八十八 鎌倉</h3>
+        <div class="space-y-3 text-sm">
+          <div>
+            <p class="text-gray-500 mb-1">住所</p>
+            <p class="text-gray-900">〒248-0006<br>神奈川県鎌倉市小町 X-X-X</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">営業時間</p>
+            <p class="text-gray-900">10:00 - 18:00</p>
+          </div>
+          <div>
+            <p class="text-gray-500 mb-1">定休日</p>
+            <p class="text-gray-900">水曜日</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-600 link-underline">
+            Google Map →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# Instagram %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Follow Us</p>
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Instagram</h2>
+    <p class="text-gray-600 mb-8">
+      <a href="https://www.instagram.com/8108asakusa_shibuya/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">@8108asakusa_shibuya</a>
+      <span class="mx-2">|</span>
+      <a href="https://www.instagram.com/8108kamakura/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">@8108kamakura</a>
+    </p>
+    <div class="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+      <p class="text-gray-500">Instagram Feed（埋め込み予定）</p>
+    </div>
+  </div>
+</section>
+
+<%# 予約CTA %>
+<section class="py-16 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">ご来店をお待ちしております</h2>
+    <p class="text-gray-400 mb-8">
+      お近くの店舗へぜひお越しください
+    </p>
+    <%= link_to "お問い合わせ", contact_path, class: "inline-block px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded hover:bg-gray-100 transition-colors" %>
+  </div>
+</section>

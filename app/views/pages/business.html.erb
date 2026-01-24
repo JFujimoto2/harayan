@@ -1,0 +1,127 @@
+<% content_for(:title) { "Business | Harayan" } %>
+
+<%# ページヘッダー %>
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">What We Do</p>
+    <h1 class="text-4xl font-semibold text-gray-900">Business</h1>
+  </div>
+</section>
+
+<%# 事業概要 %>
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="text-gray-600 leading-relaxed">
+      私たちは日本茶を軸に、飲食店舗の企画・運営から卸売、コンサルティングまで、<br class="hidden md:inline">
+      幅広い事業を展開しています。
+    </p>
+  </div>
+</section>
+
+<%# 事業一覧 %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="space-y-16">
+
+      <%# 飲食店舗運営 %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden image-container order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop"
+               alt="店舗運営"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="order-1 md:order-2">
+          <p class="text-sm text-gray-500 mb-2">01</p>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">飲食店舗の企画・運営</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            日本茶スタンド「八十八」をはじめ、和食・鉄板料理レストラン「A kyoto」、
+            日本茶とクラフトジンのカフェバー「B kyoto」を運営しています。
+          </p>
+          <ul class="text-gray-500 text-sm space-y-1">
+            <li>・日本茶スタンドの企画・運営</li>
+            <li>・和食・鉄板料理レストランの企画・運営</li>
+            <li>・カフェバーの企画・運営</li>
+          </ul>
+        </div>
+      </div>
+
+      <%# 卸売事業 %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-1">
+          <p class="text-sm text-gray-500 mb-2">02</p>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">日本茶の卸売事業</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            厳選した日本茶を、百貨店や商業施設、飲食店様へお届けしています。
+            オリジナル商品の企画・開発も承っております。
+          </p>
+          <ul class="text-gray-500 text-sm space-y-1">
+            <li>・日本茶の卸売</li>
+            <li>・百貨店・商業施設向け商品の企画</li>
+            <li>・オリジナル商品の開発</li>
+          </ul>
+        </div>
+        <div class="aspect-[4/3] rounded-lg overflow-hidden image-container order-2">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop"
+               alt="卸売事業"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <%# コンサルティング %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden image-container order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+               alt="コンサルティング"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="order-1 md:order-2">
+          <p class="text-sm text-gray-500 mb-2">03</p>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">レシピ開発・コンサルティング</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            飲食店様向けに、日本茶を使ったメニュー開発やレシピ提案、
+            店舗運営に関するコンサルティングを行っています。
+          </p>
+          <ul class="text-gray-500 text-sm space-y-1">
+            <li>・飲食店向けレシピ開発</li>
+            <li>・メニューコンサルティング</li>
+            <li>・店舗運営アドバイス</li>
+          </ul>
+        </div>
+      </div>
+
+      <%# EC・グッズ販売 %>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-1">
+          <p class="text-sm text-gray-500 mb-2">04</p>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">オリジナルグッズの企画・販売</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            日本茶に関連するオリジナルグッズを企画・販売しています。
+            実店舗およびオンラインショップでお求めいただけます。
+          </p>
+          <ul class="text-gray-500 text-sm space-y-1">
+            <li>・オリジナルグッズの企画・開発</li>
+            <li>・実店舗での販売</li>
+            <li>・ECサイトでの販売（準備中）</li>
+          </ul>
+        </div>
+        <div class="aspect-[4/3] rounded-lg overflow-hidden image-container order-2">
+          <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&h=600&fit=crop"
+               alt="グッズ販売"
+               class="w-full h-full object-cover">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<%# CTA %>
+<section class="py-16 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">お取引・ご相談について</h2>
+    <p class="text-gray-400 mb-8">
+      卸売、コンサルティング等のご相談はお気軽にお問い合わせください
+    </p>
+    <%= link_to "お問い合わせ", contact_path, class: "inline-block px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded hover:bg-gray-100 transition-colors" %>
+  </div>
+</section>

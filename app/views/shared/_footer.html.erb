@@ -2,11 +2,10 @@
   <div class="max-w-6xl mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
       <%# Brand %>
-      <div class="md:col-span-2">
+      <div class="md:col-span-1">
         <h3 class="text-xl font-semibold text-gray-900 mb-4">Harayan</h3>
-        <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-          お客様に寄り添い、最高の体験をお届けします。<br>
-          心地よい空間と丁寧なサービスで、特別な時間を。
+        <p class="text-gray-500 text-sm leading-relaxed">
+          光をとどける
         </p>
       </div>
 
@@ -15,19 +14,31 @@
         <h4 class="text-sm font-semibold text-gray-900 mb-4">Menu</h4>
         <nav class="space-y-2">
           <%= link_to "About", about_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
-          <%= link_to "Shops", shops_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
+          <%= link_to "Stores", stores_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
+          <%= link_to "Business", business_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
           <%= link_to "Recruit", recruit_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
           <%= link_to "Contact", contact_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
         </nav>
       </div>
 
-      <%# Contact Info %>
+      <%# Stores %>
       <div>
-        <h4 class="text-sm font-semibold text-gray-900 mb-4">Contact</h4>
+        <h4 class="text-sm font-semibold text-gray-900 mb-4">Stores</h4>
+        <nav class="space-y-2">
+          <%= link_to "八十八", store_8108_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
+          <%= link_to "A kyoto", store_a_kyoto_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
+          <%= link_to "B kyoto", store_b_kyoto_path, class: "block text-sm text-gray-500 hover:text-gray-900 transition-colors" %>
+        </nav>
+      </div>
+
+      <%# SNS %>
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 mb-4">Follow Us</h4>
         <div class="space-y-2 text-sm text-gray-500">
-          <p>〒000-0000</p>
-          <p>東京都○○区○○ 1-2-3</p>
-          <p>TEL: 03-0000-0000</p>
+          <a href="https://www.instagram.com/8108asakusa_shibuya/" target="_blank" rel="noopener" class="block hover:text-gray-900 transition-colors">@8108asakusa_shibuya</a>
+          <a href="https://www.instagram.com/8108kamakura/" target="_blank" rel="noopener" class="block hover:text-gray-900 transition-colors">@8108kamakura</a>
+          <a href="https://www.instagram.com/a__kyoto/" target="_blank" rel="noopener" class="block hover:text-gray-900 transition-colors">@a__kyoto</a>
+          <a href="https://www.instagram.com/b__kyoto/" target="_blank" rel="noopener" class="block hover:text-gray-900 transition-colors">@b__kyoto</a>
         </div>
       </div>
     </div>

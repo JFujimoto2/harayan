@@ -14,9 +14,18 @@ Rails.application.routes.draw do
 
   # Static pages
   get "about", to: "pages#about"
-  get "shops", to: "pages#shops"
+  get "business", to: "pages#business"
   get "recruit", to: "pages#recruit"
   get "contact", to: "pages#contact"
+
+  # Stores
+  get "stores", to: "stores#index"
+  get "stores/8108", to: "stores#hachijuhachi", as: :store_8108
+  get "stores/a-kyoto", to: "stores#a_kyoto", as: :store_a_kyoto
+  get "stores/b-kyoto", to: "stores#b_kyoto", as: :store_b_kyoto
+
+  # Legacy redirect (shops -> stores)
+  get "shops", to: redirect("/stores")
 
   # Contact form submission
   post "contact", to: "contacts#create"

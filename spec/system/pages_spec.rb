@@ -9,7 +9,7 @@ RSpec.describe "Pages", type: :system do
     it "displays hero section" do
       visit root_path
       expect(page).to have_content("Harayan")
-      expect(page).to have_content("お客様に最高の体験をお届けします")
+      expect(page).to have_content("光をとどける")
     end
 
     it "displays concept section" do
@@ -17,24 +17,24 @@ RSpec.describe "Pages", type: :system do
       expect(page).to have_content("Concept")
     end
 
-    it "displays service cards" do
+    it "displays store cards" do
       visit root_path
-      expect(page).to have_content("Services")
-      expect(page).to have_link(href: shops_path)
-      expect(page).to have_link(href: recruit_path)
-      expect(page).to have_link(href: contact_path)
+      expect(page).to have_content("Stores")
+      expect(page).to have_link(href: store_8108_path)
+      expect(page).to have_link(href: store_a_kyoto_path)
+      expect(page).to have_link(href: store_b_kyoto_path)
     end
 
     it "displays CTA section" do
       visit root_path
-      expect(page).to have_content("お気軽にお問い合わせください")
+      expect(page).to have_content("お問い合わせ")
     end
   end
 
   describe "About page" do
     it "displays philosophy section" do
       visit about_path
-      expect(page).to have_content("Philosophy")
+      expect(page).to have_content("Our Philosophy")
       expect(page).to have_content("Mission")
       expect(page).to have_content("Vision")
       expect(page).to have_content("Value")
@@ -43,33 +43,60 @@ RSpec.describe "Pages", type: :system do
     it "displays company information" do
       visit about_path
       expect(page).to have_content("Company")
-      expect(page).to have_content("株式会社Harayan")
+      expect(page).to have_content("Harayan")
     end
   end
 
-  describe "Shops page" do
-    it "displays shop information" do
-      visit shops_path
-      expect(page).to have_content("Harayan 本店")
-      expect(page).to have_content("営業時間")
-      expect(page).to have_content("定休日")
+  describe "Stores page" do
+    it "displays store cards" do
+      visit stores_path
+      expect(page).to have_content("八十八")
+      expect(page).to have_content("A kyoto")
+      expect(page).to have_content("B kyoto")
     end
 
-    it "displays map section" do
-      visit shops_path
-      expect(page).to have_content("Map")
+    it "has links to individual stores" do
+      visit stores_path
+      expect(page).to have_link(href: store_8108_path)
+      expect(page).to have_link(href: store_a_kyoto_path)
+      expect(page).to have_link(href: store_b_kyoto_path)
+    end
+  end
+
+  describe "Individual store pages" do
+    it "displays 八十八 page" do
+      visit store_8108_path
+      expect(page).to have_content("八十八")
+      expect(page).to have_content("Japanese Tea Stand")
+      expect(page).to have_content("浅草")
+    end
+
+    it "displays A kyoto page" do
+      visit store_a_kyoto_path
+      expect(page).to have_content("A kyoto")
+      expect(page).to have_content("Japanese Cuisine")
+    end
+
+    it "displays B kyoto page" do
+      visit store_b_kyoto_path
+      expect(page).to have_content("B kyoto")
+      expect(page).to have_content("Craft Gin")
+    end
+  end
+
+  describe "Business page" do
+    it "displays business content" do
+      visit business_path
+      expect(page).to have_content("Business")
+      expect(page).to have_content("飲食店舗の企画・運営")
+      expect(page).to have_content("卸売")
     end
   end
 
   describe "Recruit page" do
     it "displays recruitment message" do
       visit recruit_path
-      expect(page).to have_content("一緒に働きませんか？")
-    end
-
-    it "displays ideal candidate section" do
-      visit recruit_path
-      expect(page).to have_content("求める人物像")
+      expect(page).to have_content("一緒に")
     end
 
     it "displays job requirements" do

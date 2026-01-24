@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def shops
+  def business
   end
 
   def recruit

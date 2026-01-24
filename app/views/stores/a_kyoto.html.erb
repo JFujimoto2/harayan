@@ -1,0 +1,140 @@
+<% content_for(:title) { "A kyoto | Harayan" } %>
+
+<%# ヒーローセクション %>
+<section class="relative h-[70vh] min-h-[500px] flex items-center">
+  <img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=1920&h=1080&fit=crop"
+       alt="A kyoto"
+       class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+    <p class="text-sm tracking-wider mb-4 opacity-80">Japanese Cuisine & Teppan</p>
+    <h1 class="text-5xl md:text-6xl font-semibold tracking-tight mb-4">A kyoto</h1>
+    <p class="text-lg opacity-90">和の心を、鉄板で</p>
+  </div>
+</section>
+
+<%# コンセプト %>
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Concept</p>
+    <h2 class="text-3xl font-semibold text-gray-900 mb-8">伝統と革新が出会う場所</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">
+      「A kyoto」は、京都・祇園四条に佇む和食と鉄板料理のレストランです。<br>
+      厳選された食材を、目の前で焼き上げる臨場感とともにお楽しみください。
+    </p>
+    <p class="text-gray-500 text-sm">
+      京都の四季を感じる空間で、特別なひとときをお過ごしいただけます。
+    </p>
+  </div>
+</section>
+
+<%# ギャラリー %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm text-gray-500 mb-2">Gallery</p>
+      <h2 class="text-3xl font-semibold text-gray-900">料理と空間</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=400&h=400&fit=crop"
+             alt="和食" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop"
+             alt="鉄板" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop"
+             alt="店内" class="w-full h-full object-cover">
+      </div>
+      <div class="aspect-square rounded-lg overflow-hidden image-container">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop"
+             alt="料理" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# 店舗情報 %>
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-sm text-gray-500 mb-2">Location</p>
+      <h2 class="text-3xl font-semibold text-gray-900">店舗情報</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="bg-gray-50 rounded-lg p-8">
+        <h3 class="text-xl font-semibold text-gray-900 mb-6">A kyoto</h3>
+        <div class="space-y-4 text-sm">
+          <div class="flex">
+            <span class="w-24 text-gray-500 shrink-0">住所</span>
+            <span class="text-gray-900">
+              〒605-0074<br>
+              京都府京都市東山区祇園町 X-X-X
+            </span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 shrink-0">電話</span>
+            <span class="text-gray-900">075-XXX-XXXX</span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 shrink-0">営業時間</span>
+            <span class="text-gray-900">
+              ランチ 11:30 - 14:00<br>
+              ディナー 17:30 - 22:00
+            </span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 shrink-0">定休日</span>
+            <span class="text-gray-900">月曜日</span>
+          </div>
+          <div class="flex">
+            <span class="w-24 text-gray-500 shrink-0">アクセス</span>
+            <span class="text-gray-900">京阪祇園四条駅より徒歩5分</span>
+          </div>
+        </div>
+        <div class="mt-8 flex gap-4">
+          <a href="#" class="btn-primary text-xs">ご予約（TableCheck）</a>
+          <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-600 link-underline">
+            Google Map →
+          </a>
+        </div>
+      </div>
+
+      <div class="aspect-[4/3] rounded-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop"
+             alt="A kyoto 店内"
+             class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# Instagram %>
+<section class="py-20 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Follow Us</p>
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Instagram</h2>
+    <p class="text-gray-600 mb-8">
+      <a href="https://www.instagram.com/a__kyoto/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">@a__kyoto</a>
+    </p>
+    <div class="bg-gray-200 rounded-lg aspect-video flex items-center justify-center">
+      <p class="text-gray-500">Instagram Feed（埋め込み予定）</p>
+    </div>
+  </div>
+</section>
+
+<%# 予約CTA %>
+<section class="py-16 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">ご予約を承っております</h2>
+    <p class="text-gray-400 mb-8">
+      特別な日のお食事に、ぜひご利用ください
+    </p>
+    <a href="#" class="inline-block px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded hover:bg-gray-100 transition-colors">
+      予約する（TableCheck）
+    </a>
+  </div>
+</section>

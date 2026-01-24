@@ -1,0 +1,74 @@
+<% content_for(:title) { "Stores | Harayan" } %>
+
+<%# ページヘッダー %>
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-2">Our Brands</p>
+    <h1 class="text-4xl font-semibold text-gray-900">Stores</h1>
+  </div>
+</section>
+
+<%# 店舗一覧 %>
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <%# 八十八 %>
+      <%= link_to store_8108_path, class: "group block" do %>
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden image-container">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=1067&fit=crop"
+               alt="八十八"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-xs tracking-wider mb-2 opacity-80">Japanese Tea Stand</p>
+            <h2 class="text-2xl font-semibold mb-2">八十八</h2>
+            <p class="text-sm opacity-80">浅草・渋谷・鎌倉</p>
+          </div>
+        </div>
+      <% end %>
+
+      <%# A kyoto %>
+      <%= link_to store_a_kyoto_path, class: "group block" do %>
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden image-container">
+          <img src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?w=800&h=1067&fit=crop"
+               alt="A kyoto"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-xs tracking-wider mb-2 opacity-80">Japanese Cuisine & Teppan</p>
+            <h2 class="text-2xl font-semibold mb-2">A kyoto</h2>
+            <p class="text-sm opacity-80">京都・祇園四条</p>
+          </div>
+        </div>
+      <% end %>
+
+      <%# B kyoto %>
+      <%= link_to store_b_kyoto_path, class: "group block" do %>
+        <div class="relative aspect-[3/4] rounded-lg overflow-hidden image-container">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&h=1067&fit=crop"
+               alt="B kyoto"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <p class="text-xs tracking-wider mb-2 opacity-80">Japanese Tea & Craft Gin</p>
+            <h2 class="text-2xl font-semibold mb-2">B kyoto</h2>
+            <p class="text-sm opacity-80">京都・祇園四条</p>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</section>
+
+<%# CTA %>
+<section class="py-16 bg-gray-900 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">ご予約・お問い合わせ</h2>
+    <p class="text-gray-400 mb-8">
+      各店舗へのご予約は、店舗詳細ページよりお願いいたします
+    </p>
+    <%= link_to "お問い合わせ", contact_path, class: "inline-block px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded hover:bg-gray-100 transition-colors" %>
+  </div>
+</section>
