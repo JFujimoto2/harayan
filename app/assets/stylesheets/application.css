@@ -1,10 +1,220 @@
 /*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
+ * Harayan - Simple & Casual Design System
+ * ホワイトベース、シンプル、20代〜30代向け
  */
+
+/* ==========================================================================
+   CSS Variables (Design System)
+   ========================================================================== */
+:root {
+  /* 背景系 - ホワイトベース */
+  --background: #ffffff;
+  --background-secondary: #fafafa;
+  --muted: #f5f5f5;
+
+  /* テキスト系 */
+  --foreground: #1a1a1a;
+  --muted-foreground: #666666;
+
+  /* アクセント - 各店舗/事業で変更可能 */
+  --primary: #1a1a1a;
+
+  /* ボーダー */
+  --border: #e5e5e5;
+  --border-light: #f0f0f0;
+
+  /* フォント */
+  --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+/* シンプルなフェードイン */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ホバーリフト（控えめ） */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* リンクの下線アニメーション */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Component Styles
+   ========================================================================== */
+
+/* シンプルなカード */
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--foreground);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   Button Styles
+   ========================================================================== */
+
+/* プライマリボタン（黒背景） */
+.btn-primary {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #333333;
+}
+
+/* セカンダリボタン（アウトライン） */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #1a1a1a;
+  padding: 0.875rem 2rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Image Styles
+   ========================================================================== */
+
+/* 画像コンテナ */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999999;
+}
+
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
+
+.nav-link {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
